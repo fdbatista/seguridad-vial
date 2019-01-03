@@ -1,0 +1,115 @@
+#downloadButtonUniqueId {
+    display: none!important;
+    border: none;
+    background-color: transparent;
+}
+
+.margen-derecho {
+    margin-right: 20px;
+    float: right;
+}
+
+button {
+    font-family: MyFontAwesome;
+}
+
+.v-grid .v-nativebutton {
+    font-size: 12px;
+}
+
+input[type="file"] {
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    outline: none;
+    font-size: 14px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.align-bottom-row {
+    margin-top: 25px;
+}
+
+.padding {
+    padding: 3px;
+}
+
+.margin-top {
+    margin-top: 5px;
+}
+
+.notification-item {
+    margin-bottom: 10px!important;
+    border-bottom: 1px dotted #c5ccd5;
+}
+
+.icono-notificacion {
+    max-width: 32px!important;
+    height: auto;
+}
+
+.notifications {
+    text-align: center!important;
+}
+
+#ID-Label {
+    background-color: red;
+    color: #fff;
+    top: 1px;
+    left: 25px!important;
+    min-width: 25px;
+    padding: 3px;
+}
+
+.boton-elim-notificaciones {
+    margin-left: 70px!important;
+    top:-5px!important;
+}
+
+.boton-link {
+    height: 20px!important;
+    font-size: 14px;
+    padding: 0!important;
+    background: none!important;
+    border: none!important;
+    text-decoration: none!important;
+}
+
+.boton-link:focus::after {
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+
+.encabezado {
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.contenedor-notificaciones {
+    margin-top: 10px!important;
+    border: none!important;
+}
+
+.img-icono {
+    /*margin-top: 10px!important;
+    /*height: 32px!important;
+    width: 32px!important;*/
+}
+
+#boton-regresar-notif {
+    margin-bottom: 5px!important;
+}
+
+#boton-entendido-notif {
+    margin-top: 5px!important;
+}
+
+#boton-notif-ant {
+    margin-left: 160px;
+}
+
+#boton-notif-sig {
+
+}

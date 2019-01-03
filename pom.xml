@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.earandap</groupId>
+    <artifactId>vehiculos</artifactId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+
+    <name>vehiculos</name>
+    <description>Demo project for Spring Boot</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.6.RELEASE</version>
+        <relativePath/>
+        <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <vaadin.version>7.5.8</vaadin.version>
+        <vaadin-spring.version>1.0.0</vaadin-spring.version>
+        <vaadin4spring.version>0.0.7.RELEASE</vaadin4spring.version>
+        <vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
+        <vaadin-grid-util-version>1.0.7</vaadin-grid-util-version>
+        <project.source.version>1.8</project.source.version>
+        <project.target.version>1.8</project.target.version>
+        <project.encoding>UTF-8</project.encoding>
+    </properties>
+
+    <dependencies>
+
+        <!-- spring boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <!-- vaadin4spring-->
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-spring-boot</artifactId>
+            <version>${vaadin-spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.vaadin.spring.extensions</groupId>
+            <artifactId>vaadin-spring-ext-core</artifactId>
+            <version>${vaadin4spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.vaadin.spring.extensions</groupId>
+            <artifactId>vaadin-spring-ext-boot</artifactId>
+            <version>${vaadin4spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.vaadin.spring.extensions</groupId>
+            <artifactId>vaadin-spring-ext-security</artifactId>
+            <version>${vaadin4spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.vaadin.spring.addons</groupId>
+            <artifactId>vaadin-spring-addon-eventbus</artifactId>
+            <version>${vaadin4spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.vaadin.spring.addons</groupId>
+            <artifactId>vaadin-spring-addon-sidebar</artifactId>
+            <version>${vaadin4spring.version}</version>
+        </dependency>
+
+        <!-- vaadin -->
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-themes</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-client-compiled</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-push</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4-1201-jdbc41</version>
+        </dependency>
+
+        <!-- vaadin addons -->
+
+        <dependency>
+            <groupId>org.vaadin.addons</groupId>
+            <artifactId>vaadin-grid-util</artifactId>
+            <version>${vaadin-grid-util-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.vaadin</groupId>
+            <artifactId>suggestfield</artifactId>
+            <version>0.0.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.steinwedel.vaadin.addon</groupId>
+            <artifactId>messagebox</artifactId>
+            <version>2.0.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.vaadin.addon</groupId>
+            <artifactId>easyuploads</artifactId>
+            <version>7.4.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.vaadin.addons</groupId>
+            <artifactId>animator</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.vaadin.addons</groupId>
+            <artifactId>dom</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+        
+        <!--<dependency>
+            <groupId>org.vaadin.addons</groupId>
+            <artifactId>popupbutton</artifactId>
+            <version>2.6.0</version>
+        </dependency>-->
+        
+        <dependency>
+            <groupId>org.vaadin.anna</groupId>
+            <artifactId>gridactionrenderer</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-email</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-bom</artifactId>
+                <version>${vaadin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>${project.source.version}</source>
+                    <target>${project.target.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!-- As we are doing "inplace" GWT compilation, ensure the widgetset -->
+            <!-- directory is cleaned properly -->
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>src/main/webapp/VAADIN/widgetsets</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-maven-plugin</artifactId>
+                <version>${vaadin.plugin.version}</version>
+                <configuration>
+                    <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+                    <webappDirectory>${basedir}/src/main/webapp/VAADIN/widgetsets</webappDirectory>
+                    <hostedWebapp>${basedir}/src/main/webapp/VAADIN/widgetsets</hostedWebapp>
+                    <deploy>${project.build.directory}/gwt-deploy</deploy>
+
+                    <!-- Compile report is not typically needed either, saves hundreds of mb disk -->
+                    <compileReport>false</compileReport>
+                    <noServer>true</noServer>
+
+                    <!-- Remove draftCompile when project is ready -->
+                    <draftCompile>false</draftCompile>
+
+                    <style>OBF</style>
+                    <strict>true</strict>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>clean</goal>
+                            <goal>resources</goal>
+                            <goal>update-theme</goal>
+                            <goal>update-widgetset</goal>
+                            <goal>compile-theme</goal>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        
+        <repository>
+            <id>vaadin-addons</id>
+            <url>http://maven.vaadin.com/vaadin-addons</url>
+        </repository>
+        
+        <repository>
+            <id>Java.Net</id>
+            <url>http://download.java.net/maven/2/</url>
+        </repository>
+        
+        <repository>
+            <id>sonatype-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        
+    </repositories>
+
+
+</project>

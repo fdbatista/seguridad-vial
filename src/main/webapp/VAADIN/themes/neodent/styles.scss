@@ -1,0 +1,19 @@
+@import "neodent";
+@import "addons";
+
+// This file prefixes all rules with the theme name to avoid causing conflicts with other themes.
+// The actual styles should be defined in arborea.scss
+
+.neodent {
+  @include addons;
+  @include neodent;
+
+}
+
+@font-face {
+  font-family: 'MyFontAwesome';
+  src: url('fonts/fontawesome-webfont.eot?v=4.5.0');
+  src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

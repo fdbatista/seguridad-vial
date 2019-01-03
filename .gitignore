@@ -1,0 +1,8 @@
+.idea/.name
+.idea/
+target/
+.project
+vehiculos.iml
+.settings/
+*.cache
+src/main/webapp/VAADIN/gwt-unitCache/

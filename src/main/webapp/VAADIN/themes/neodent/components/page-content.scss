@@ -1,0 +1,149 @@
+@mixin page-content {
+
+  /*** Page content ***/
+
+  /* Page header */
+  .page-head:before, .page-head:after {
+    content: " ";
+    display: table;
+  }
+  .page-head:after {
+    clear: both;
+  }
+  .page-head .page-title {
+    display: inline-block;
+    float: left;
+    padding: 5px 0 10px 0;
+    color: #697882;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0;
+
+  }
+  .page-head .page-title > h1 > small {
+    color: #9eacb4;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .page-head .page-toolbar {
+    display: inline-block;
+    float: right;
+  }
+
+  .breadcrumb {
+    background: none;
+    padding: 0 0 15px 0;
+    margin: 0;
+    color: #c5ccd5;
+  }
+
+  .breadcrumb > li + li:before {
+    display: none;
+  }
+
+  .breadcrumb .fa {
+    font-size: 6px;
+    margin: 0 2px 0 4px;
+    position: relative;
+    top: -1px;
+  }
+
+  .breadcrumb > .active {
+    color: #9eacb4;
+  }
+
+  /* Page content */
+  .page-content-wrapper {
+    display: block;
+  }
+  .page-content {
+    margin-top: 0px;
+    padding: 0px;
+  }
+  .page-full-width .page-content {
+    margin-left: 0px !important;
+  }
+
+  .v-ui[width-range~="992px-"] {
+    /* 992px */
+    /* Page content */
+    .page-content-wrapper {
+      float: left;
+      width: 100%;
+    }
+    .page-content-wrapper .page-content {
+      margin-top: 0;
+      min-height: 600px;
+      padding: 10px 0 0 20px;
+    }
+    .page-content-wrapper .page-content.no-min-height {
+      min-height: auto;
+    }
+    .page-sidebar-fixed.page-sidebar-hover-on .page-content-wrapper .page-content {
+      margin-left: 54px;
+    }
+
+    .page-sidebar-closed .page-content-wrapper .page-content {
+      margin-left: 54px !important;
+    }
+    .page-sidebar-closed.page-sidebar-hide .page-content-wrapper .page-content {
+      margin-left: 0 !important;
+    }
+    .page-sidebar-closed.page-sidebar-reversed.page-sidebar-hide .page-content-wrapper .page-content {
+      margin-right: 0 !important;
+    }
+    .page-full-width .page-content-wrapper .page-content {
+      margin-left: 0 !important;
+    }
+  }
+  @media (max-width: 991px) {
+    /* 991px */
+    /* Boxed page container  */
+    .page-boxed > .container {
+      width: 100%;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* Page content */
+    .page-content-wrapper1 .page-content {
+      margin: 0px !important;
+      padding: 20px !important;
+      min-height: 280px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    /*  768px & 991px */
+    /* Boxed page container */
+    .page-boxed > .container {
+      margin: auto !important;
+    }
+  }
+  @media (max-width: 767px) {
+    /* 767px */
+    /* Page content */
+    .page-content-wrapper .page-content {
+      padding: 20px 10px 10px 10px !important;
+      overflow: hidden;
+      /* Page title */
+    }
+    .page-content-wrapper .page-content .page-title {
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+    .page-content-wrapper .page-content .page-title small {
+      font-size: 13px;
+      padding-top: 3px;
+    }
+  }
+  @media (max-width: 480px) {
+    /* 480px */
+    /* Dashboard date range panel */
+    .page-content-wrapper .page-content .page-title small {
+      display: block;
+      clear: both;
+    }
+  }
+
+}

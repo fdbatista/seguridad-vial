@@ -1,0 +1,260 @@
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+//$v-font-size: 16px;
+//$v-font-weight: 300;
+//$v-font-family: "Open Sans", sans-serif;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+$v-error-indicator-color: #ed473b;
+
+// Main layout padding
+$view-padding: round($v-unit-size / 1.5) !default;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+
+@import "../valo/valo.scss";
+@import "views/login";
+@import "components/page-container";
+@import "components/page-content";
+@import "components/page-sidebar";
+@import "components/portlet-view";
+
+@mixin neodent {
+    @include valo;
+    @include login-view;
+    @include page-container;
+    @include page-content;
+    @include page-sidebar;
+    @include portlet-view;
+
+    .page-header {
+        background: #FFFFFF;
+        width: 100%;
+        padding: 0 20px 0 20px;
+        margin: 0;
+        border: 0;
+        box-shadow: none;
+        height: 75px;
+        min-height: 75px;
+        filter: none;
+        border-bottom: 1px solid #e9ecf3;
+    }
+    .page-header.navbar.navbar-fixed-top {
+        z-index: 9995;
+    }
+
+    .neo-view {
+        width: 100%;
+        float: left;
+        position: relative;
+        min-height: 1px;
+    }
+    .float-menu {
+        display: flex;
+    }
+
+    .page-header .top-menu {
+        margin: 10px 0 0 0;
+        padding: 0;
+        display: inline-block;
+        float: right;
+    }
+    /*
+     .page-header .top-menu .v-icon {
+        font-size: 38px;
+      }
+    */
+
+    .float-menu.v-window {
+        overflow: visible !important;
+        right: $view-padding;
+        left: auto !important;
+        max-width: 90%;
+
+        $window-outline: $v-overlay-shadow;
+        @if list-of-lists($window-outline) {
+            $window-outline: last($v-overlay-shadow);
+        }
+
+        $window-outline: flatten-list(valo-bevel-and-shadow($bevel: null, $shadow: $window-outline));
+        $outline-width: nth($window-outline, length($window-outline) - 1);
+        $outline-color: last($window-outline);
+
+        @include transform-origin(296px - (2 * $v-unit-size - round($v-unit-size / 3)) -7px);
+
+        .v-window-header {
+            color: $v-selection-color;
+        }
+
+        .v-window-outerheader:after,
+            .v-scrollable:before {
+            display: none;
+        }
+        &:before,
+            &:after {
+            content: "";
+            position: absolute;
+            top: -14px;
+            right: 125px;
+            border: 7px solid transparent;
+            width: 0;
+            height: 0;
+            border-bottom-color: $v-window-background-color;
+        }
+
+        &:before {
+            @if type-of($outline-width) == number and $outline-width > 0 {
+                top: -15px - 2 * $outline-width;
+                margin-right: -$outline-width;
+                border-width: 7px + $outline-width;
+                border-bottom-width: 8px;
+                border-bottom-color: $outline-color;
+            } @else {
+                content: none;
+            }
+        }
+
+        .v-window-header {
+            color: $v-selection-color;
+        }
+
+        .v-window-outerheader:after,
+            .v-scrollable:before {
+            display: none;
+        }
+    }
+
+    .float-menu-user.v-window {
+        &:before,
+            &:after {
+            right: 5px;
+        }
+    }
+
+    .float-menu-notification.v-window {
+        &:before,
+            &:after {
+            right: 65px;
+        }
+    }
+
+    .notification-item {
+        font-size: round($v-font-size * 0.9);
+    }
+
+    .notification-title {
+        font-weight: $v-font-weight + 200;
+    }
+
+    .notification-time {
+        font-size: round($v-font-size * 0.8);
+        color: valo-font-color($v-window-background-color, .5);
+    }
+
+    .v-menubar-user-menu {
+        margin: 0px;
+    }
+    .v-menubar-user-menu:after {
+        display: none;
+    }
+    .badgewrapper {
+        position: relative;
+        padding: 0 !important;
+    }
+
+    .v-menubar-user-menu > .v-menubar-menuitem {
+        display: block;
+        padding: 0;
+        max-width: 90%;
+        margin: 0 auto;
+        font-size: 12px;
+
+        .v-menubar-menuitem-caption:after {
+            margin-right: -1em;
+        }
+
+        img.v-icon {
+            @if is-dark-color($valo-menu-background-color) {
+                border: none;
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+
+    .float-menu .popup-menu-item {
+        text-align: center;
+        width: 80px;
+    }
+    .float-menu .popup-menu-item .v-icon {
+        font-size: 42px;
+        color: #485a6a;
+    }
+
+    .float-menu .popup-menu-item .v-icon:hover {
+        color: #5b9bd1;
+    }
+
+    .float-menu .popup-menu-item .popup-menu-item-caption {
+        display: block;
+        font-size: 12px;
+    }
+
+    .float-menu .float-menu-column {
+        text-align: center;
+        padding: 0 37px 0 0;
+    }
+
+    .button-search-form {
+        margin-top: 23px;
+    }
+    .archivo-form tr.v-formlayout-row.v-formlayout-firstrow > td {
+        padding-top: 0;
+    }
+
+    .seguro-form tr.v-formlayout-row.v-formlayout-firstrow > td {
+        padding-top: 0;
+    }
+
+    .fixed-checkbox {
+        margin-top: 28px;
+    }
+
+    .mantenimientodetalle-form tr.v-formlayout-row.v-formlayout-firstrow > td {
+        padding-top: 0;
+    }
+
+    .infraccion-form tr.v-formlayout-row.v-formlayout-firstrow > td {
+        padding-top: 0;
+    }
+
+    .top-menu .v-icon{
+        font-size: 35px;
+    }
+
+    .top-menu .v-button-icon-only{
+        width: 50px;
+        height: 50px;
+        padding: 0;
+    }
+
+}

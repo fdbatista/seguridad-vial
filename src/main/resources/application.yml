@@ -1,0 +1,43 @@
+spring:
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+    datasource:
+        url: jdbc:postgresql://127.0.0.1:5432/seguridad-vial
+        username: postgres
+        password: postgres
+        driver-class-name: org.postgresql.Driver
+
+    mail:
+        default-encoding: UTF-8
+        protocol: smtp
+        host: smtp.gmail.com
+        port: 587
+        password: # Google App password
+        username: # Google account mail address
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+                    socketFactory:
+                        port: 587
+                        class: javax.net.ssl.SSLSocketFactory
+                        fallback: false
+                debug: true
+    test-connection: false
+
+
+logging:
+    level:
+        org:
+            hibernate:
+                SQL: INFO
+            springframework:
+                jdbc: INFO
+
+app:
+  upload:
+    folder-dir: C:\\xampp\\tomcat\\webapps\\uploads\\
+    web-dir: http://localhost:9090/uploads/

@@ -1,0 +1,10 @@
+.grid-action-widget {
+  float: left;
+  width: 25px;
+  text-align:center;
+}
+
+.grid-action-widget span {
+  display: inline-block;
+  cursor: pointer;
+}
